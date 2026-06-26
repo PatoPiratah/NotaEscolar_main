@@ -1,0 +1,229 @@
+/* ========================================
+   NOTA ESCOLAR - Global Styles
+   ======================================== */
+
+:root {
+  /* Color Palette */
+  --color-bg-primary: #0f1117;
+  --color-bg-secondary: #161922;
+  --color-bg-card: #1c1f2e;
+  --color-bg-card-hover: #232740;
+  --color-bg-input: #12141d;
+  --color-bg-modal-overlay: rgba(0, 0, 0, 0.6);
+
+  --color-border: #2a2d3e;
+  --color-border-focus: #6c63ff;
+  --color-border-subtle: #1e2133;
+
+  --color-text-primary: #e8e9f0;
+  --color-text-secondary: #8b8fa3;
+  --color-text-muted: #555872;
+  --color-text-heading: #ffffff;
+
+  --color-accent-primary: #6c63ff;
+  --color-accent-primary-hover: #5a52e0;
+  --color-accent-primary-glow: rgba(108, 99, 255, 0.25);
+
+  --color-accent-danger: #ff4d6a;
+  --color-accent-danger-hover: #e0435d;
+  --color-accent-danger-glow: rgba(255, 77, 106, 0.2);
+
+  --color-accent-warning: #ffb347;
+  --color-accent-warning-bg: rgba(255, 179, 71, 0.12);
+  --color-accent-warning-border: rgba(255, 179, 71, 0.3);
+
+  --color-status-approved: #34d399;
+  --color-status-approved-bg: rgba(52, 211, 153, 0.1);
+  --color-status-approved-border: rgba(52, 211, 153, 0.3);
+
+  --color-status-exam: #fbbf24;
+  --color-status-exam-bg: rgba(251, 191, 36, 0.1);
+  --color-status-exam-border: rgba(251, 191, 36, 0.3);
+
+  --color-status-failed: #f87171;
+  --color-status-failed-bg: rgba(248, 113, 113, 0.1);
+  --color-status-failed-border: rgba(248, 113, 113, 0.3);
+
+  --color-edit: #60a5fa;
+  --color-edit-hover: #3b82f6;
+  --color-edit-glow: rgba(96, 165, 250, 0.2);
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --shadow-glow-primary: 0 0 20px var(--color-accent-primary-glow);
+  --shadow-glow-danger: 0 0 20px var(--color-accent-danger-glow);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.9375rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.375rem;
+  --font-size-2xl: 1.75rem;
+  --font-size-3xl: 2.25rem;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* ========================================
+   Scrollbar Styles
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* ========================================
+   Utility Animation Keyframes
+   ======================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ========================================
+   Focus Visible
+   ======================================== */
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Selection
+   ======================================== */
+
+::selection {
+  background: var(--color-accent-primary);
+  color: white;
+}
